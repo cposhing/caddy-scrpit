@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Caddy!</title>
+    <style>
+        html { color-scheme: light dark; }
+        body { width: 35em; margin: 0 auto;font-family: Helvetica, "微软雅黑" , serif;}
+    </style>
+</head>
+<body>
+<h1>Welcome to Caddy!</h1>
+<small>你可以通过`/your_path/caddy_start.cmd ${your_port}`命令在<a href="http://127.0.0.1/caddy.html">http://127.0.0.1/caddy.html</a>中看到我😊</small>
+<hr>
+<h4>启动时指定后端服务端口</h4>
+<p>使用脚本启动时在参数位置指定后端服务的端口, 比如: 我的后端服务运行在端口8080</p>
+<code>
+    /your_path/caddy_start.cmd 8080
+</code>
+
+<h4>修改默认根路径</h4>
+<p>默认的web根路径为caddy.html所在的路径, 你可以在caddy_start.cmd脚本中51行指定web根路径,比如: </p>
+<code>
+    set WEB_ROOT=C:\Users\Administrator\Desktop\MY_WEB
+</code>
+<p>或者, 将`caddy.exe`, `caddy_start.cmd`, `Caddyfile`同时移动至你的项目根目录</p>
+
+<h4>修改代理路径</h4>
+<p>默认代理路径配置为`/api/*`, 你可以在Caddyfile第14行指定代理路径</p>
+<code>
+    handle_path /api_v1/* {
+</code>
+<hr>
+<small>caddy版本: v2.7.4 h1:J8nisjdOxnYHXlorUKXY75Gr6iBfudfoGhrJ8t7/flI=</small>
+</body>
+</html>

@@ -1,0 +1,17 @@
+#global options block
+{
+	admin off #disable admin endpoint, if you off the admin endpoint, the api command can not use anymore
+	auto_https off #dsiable auto https for all router
+	persist_config off #disable auto persist config
+}
+
+# router options block
+:80 {
+	# root * {http.vars.root}
+	root * {env.WEB_ROOT} # this config will accept the dynamical web root dir, you can pass it by config file of directly set in you system env
+	file_server
+
+	handle_path /api/* {
+		reverse_proxy {env.SERVER_HOST}
+	}
+}
